@@ -1,0 +1,56 @@
+<%- model_class = Remitente -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:nombre) %></th>
+      <th><%= model_class.human_attribute_name(:nombre_entidad) %></th>
+      <th><%= model_class.human_attribute_name(:tipo_entidad) %></th>
+      <th><%= model_class.human_attribute_name(:nombre_solicitante) %></th>
+      <th><%= model_class.human_attribute_name(:cargo) %></th>
+      <th><%= model_class.human_attribute_name(:ciudad) %></th>
+      <th><%= model_class.human_attribute_name(:departamento) %></th>
+      <th><%= model_class.human_attribute_name(:direccion) %></th>
+      <th><%= model_class.human_attribute_name(:telefono) %></th>
+      <th><%= model_class.human_attribute_name(:email) %></th>
+      <th><%= model_class.human_attribute_name(:fecha_solicitud) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @remitentes.each do |remitente| %>
+      <tr>
+        <td><%= link_to remitente.id, remitente_path(remitente) %></td>
+        <td><%= remitente.nombre %></td>
+        <td><%= remitente.nombre_entidad %></td>
+        <td><%= remitente.tipo_entidad %></td>
+        <td><%= remitente.nombre_solicitante %></td>
+        <td><%= remitente.cargo %></td>
+        <td><%= remitente.ciudad %></td>
+        <td><%= remitente.departamento %></td>
+        <td><%= remitente.direccion %></td>
+        <td><%= remitente.telefono %></td>
+        <td><%= remitente.email %></td>
+        <td><%= remitente.fecha_solicitud %></td>
+        <td><%=l remitente.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_remitente_path(remitente), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      remitente_path(remitente),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_remitente_path,
+            :class => 'btn btn-primary' %>

@@ -1,0 +1,101 @@
+<%= form_for @remitente, :html => { :class => "form-horizontal remitente" } do |f| %>
+
+    <% if @remitente.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@remitente.errors.count, "error") %> prohibited this remitente from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @remitente.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :nombre, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :nombre, :class => 'form-control' %>
+    </div>
+    <%= error_span(@remitente[:nombre]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :nombre_entidad, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :nombre_entidad, :class => 'form-control' %>
+    </div>
+    <%= error_span(@remitente[:nombre_entidad]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :tipo_entidad, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :tipo_entidad, :class => 'form-control' %>
+    </div>
+    <%= error_span(@remitente[:tipo_entidad]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :nombre_solicitante, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :nombre_solicitante, :class => 'form-control' %>
+    </div>
+    <%= error_span(@remitente[:nombre_solicitante]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :cargo, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :cargo, :class => 'form-control' %>
+    </div>
+    <%= error_span(@remitente[:cargo]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :ciudad, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :ciudad, :class => 'form-control' %>
+    </div>
+    <%= error_span(@remitente[:ciudad]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :departamento, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :departamento, :class => 'form-control' %>
+    </div>
+    <%= error_span(@remitente[:departamento]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :direccion, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :direccion, :class => 'form-control' %>
+    </div>
+    <%= error_span(@remitente[:direccion]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :telefono, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :telefono, :class => 'form-control' %>
+    </div>
+    <%= error_span(@remitente[:telefono]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :email, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :email, :class => 'form-control' %>
+    </div>
+    <%= error_span(@remitente[:email]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :fecha_solicitud, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :fecha_solicitud, :class => 'form-control' %>
+    </div>
+    <%= error_span(@remitente[:fecha_solicitud]) %>
+  </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            remitentes_path, :class => 'btn btn-default' %>
+
+<% end %>
