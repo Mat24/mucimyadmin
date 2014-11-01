@@ -1,0 +1,45 @@
+<%- model_class = Receptora -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:nombre_etidad) %>:</strong></dt>
+  <dd><%= @receptora.nombre_etidad %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:tipo_entidad) %>:</strong></dt>
+  <dd><%= @receptora.tipo_entidad %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:nombre_receptor) %>:</strong></dt>
+  <dd><%= @receptora.nombre_receptor %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:cargo) %>:</strong></dt>
+  <dd><%= @receptora.cargo %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:ciudad) %>:</strong></dt>
+  <dd><%= @receptora.ciudad %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:departamento) %>:</strong></dt>
+  <dd><%= @receptora.departamento %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:direccion) %>:</strong></dt>
+  <dd><%= @receptora.direccion %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:telefono) %>:</strong></dt>
+  <dd><%= @receptora.telefono %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:correo_electronico) %>:</strong></dt>
+  <dd><%= @receptora.correo_electronico %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:fecha_recepcion) %>:</strong></dt>
+  <dd><%= @receptora.fecha_recepcion %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:fecha_valoracion) %>:</strong></dt>
+  <dd><%= @receptora.fecha_valoracion %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:fecha_elaboracion) %>:</strong></dt>
+  <dd><%= @receptora.fecha_elaboracion %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:fecha_notificacion) %>:</strong></dt>
+  <dd><%= @receptora.fecha_notificacion %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:numero_dictamen) %>:</strong></dt>
+  <dd><%= @receptora.numero_dictamen %></dd>
+</dl>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              receptoras_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_receptora_path(@receptora), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              receptora_path(@receptora),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

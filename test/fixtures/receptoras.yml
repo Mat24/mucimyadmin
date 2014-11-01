@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre_etidad: MyString
+  tipo_entidad: MyString
+  nombre_receptor: MyString
+  cargo: MyString
+  ciudad: MyString
+  departamento: MyString
+  direccion: MyString
+  telefono: MyString
+  correo_electronico: MyString
+  fecha_recepcion: 2014-11-01
+  fecha_valoracion: 2014-11-01
+  fecha_elaboracion: 2014-11-01
+  fecha_notificacion: 2014-11-01
+  numero_dictamen: MyString
+
+two:
+  nombre_etidad: MyString
+  tipo_entidad: MyString
+  nombre_receptor: MyString
+  cargo: MyString
+  ciudad: MyString
+  departamento: MyString
+  direccion: MyString
+  telefono: MyString
+  correo_electronico: MyString
+  fecha_recepcion: 2014-11-01
+  fecha_valoracion: 2014-11-01
+  fecha_elaboracion: 2014-11-01
+  fecha_notificacion: 2014-11-01
+  numero_dictamen: MyString

@@ -1,0 +1,2 @@
+module ReceptorasHelper
+end

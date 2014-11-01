@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :receptoras
+
   resources :remitentes
 
   get 'home/index'

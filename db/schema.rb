@@ -11,7 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141031012753) do
+ActiveRecord::Schema.define(version: 20141101202212) do
+
+  create_table "receptoras", force: true do |t|
+    t.string   "nombre_etidad"
+    t.string   "tipo_entidad"
+    t.string   "nombre_receptor"
+    t.string   "cargo"
+    t.string   "ciudad"
+    t.string   "departamento"
+    t.string   "direccion"
+    t.string   "telefono"
+    t.string   "correo_electronico"
+    t.date     "fecha_recepcion"
+    t.date     "fecha_valoracion"
+    t.date     "fecha_elaboracion"
+    t.date     "fecha_notificacion"
+    t.string   "numero_dictamen"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "remitentes", force: true do |t|
     t.string   "nombre"

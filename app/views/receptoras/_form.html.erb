@@ -1,0 +1,122 @@
+<%= form_for @receptora, :html => { :class => "form-horizontal receptora" } do |f| %>
+
+    <% if @receptora.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@receptora.errors.count, "error") %> prohibited this receptora from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @receptora.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :nombre_etidad, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :nombre_etidad, :class => 'form-control' %>
+    </div>
+    <%= error_span(@receptora[:nombre_etidad]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :tipo_entidad, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :tipo_entidad, :class => 'form-control' %>
+    </div>
+    <%= error_span(@receptora[:tipo_entidad]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :nombre_receptor, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :nombre_receptor, :class => 'form-control' %>
+    </div>
+    <%= error_span(@receptora[:nombre_receptor]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :cargo, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :cargo, :class => 'form-control' %>
+    </div>
+    <%= error_span(@receptora[:cargo]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :ciudad, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :ciudad, :class => 'form-control' %>
+    </div>
+    <%= error_span(@receptora[:ciudad]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :departamento, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :departamento, :class => 'form-control' %>
+    </div>
+    <%= error_span(@receptora[:departamento]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :direccion, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :direccion, :class => 'form-control' %>
+    </div>
+    <%= error_span(@receptora[:direccion]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :telefono, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :telefono, :class => 'form-control' %>
+    </div>
+    <%= error_span(@receptora[:telefono]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :correo_electronico, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :correo_electronico, :class => 'form-control' %>
+    </div>
+    <%= error_span(@receptora[:correo_electronico]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :fecha_recepcion, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :fecha_recepcion, :class => 'form-control' %>
+    </div>
+    <%= error_span(@receptora[:fecha_recepcion]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :fecha_valoracion, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :fecha_valoracion, :class => 'form-control' %>
+    </div>
+    <%= error_span(@receptora[:fecha_valoracion]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :fecha_elaboracion, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :fecha_elaboracion, :class => 'form-control' %>
+    </div>
+    <%= error_span(@receptora[:fecha_elaboracion]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :fecha_notificacion, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :fecha_notificacion, :class => 'form-control' %>
+    </div>
+    <%= error_span(@receptora[:fecha_notificacion]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :numero_dictamen, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :numero_dictamen, :class => 'form-control' %>
+    </div>
+    <%= error_span(@receptora[:numero_dictamen]) %>
+  </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            receptoras_path, :class => 'btn btn-default' %>
+
+<% end %>
